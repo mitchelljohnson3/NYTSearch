@@ -1,20 +1,44 @@
-var apiKey = "DQ99xseSmJfhFUjox4O0vQvEKtMMl9M2";
-var keyWord = "weather";
-var limit = 0;
-var startDate = "2000";
-var endDate = "";
+const apiKey = "DQ99xseSmJfhFUjox4O0vQvEKtMMl9M2";
 
-if(startDate != ""){
-    var startDateParam = `&begin_date=${startDate + "0101"}`;
-} else {var startDateParam = "";}
+let genUrl = (keyWord, limit, startDate, endDate) => {
+    if(startDate != ""){
+        var startDateParam = `&begin_date=${startDate + "0101"}`;
+    } else {var startDateParam = "";}
+    
+    if(endDate != ""){
+        var endDateParam = `&end_date=${endDate + "0101"}`;
+    } else {
+        var endDateParam = "";
+    }
+    return `https://api.nytimes.com/svc/search/v2/articlesearch.json?q=%22${keyWord}%22${startDateParam}${endDateParam}&fl=web_url&fl=lead_paragraph&api-key=${apiKey}`;
+};
 
-if(endDate != ""){
-    var endDateParam = `&end_date=${endDate + "0101"}`;
-} else {
-    var endDateParam = "";
+let showError = () => {
+    console.log("bad search");
 }
 
-var url = `https://api.nytimes.com/svc/search/v2/articlesearch.json?q=%22${keyWord}%22${startDateParam}${endDateParam}&fl=web_url&fl=lead_paragraph&api-key=${apiKey}`;
+var button = document.getElementById("submit");
+var term = document.getElementById("term");
+var limit = document.getElementById("limit");
+var start = document.getElementById("start");
+var end = document.getElementById("end");
+button.addEventListener("click", () => {
+    let goodSearch = true;
+    if(term.value === "" || limit.value === ""){
+        goodSearch = false;
+    }
+    if(goodSearch){
+        let url = genUrl(term.value, limit.value, start.value, end.value);
+        fetch(url).then((response) => {
+            return response.json();
+        }).then((json) => {
+            displayArticles(json);
+        })
+    } else {
+        showError();
+    }
+});
 
-//find out how to use the startDate and endDate
-console.log(url);
+let displayArticles = (jsonObject) => {
+    
+}
