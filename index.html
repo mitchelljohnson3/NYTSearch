@@ -4,12 +4,67 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>NYTSEARCH</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
 </head>
 <body>
+    <main class="container-fluid py-3 flex-fill">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="header">
+                        <h1><i class="fas fa-newspaper"></i> New York Times Search</h1>
+                    </div>
+                    <div class="md-form active-purple active-purple-2 mb-3 mt-0">
+                        <h5>Search Parameters</h5>
+                        <p>Search Term</p>
+                        <input class="form-control" type="text" aria-label="Search">
+                      </div>
+                      <!-- Search form -->
+                      <p>Number of Records to Retrieve</p>
+                      <div class="md-form active-purple active-purple-2 mb-3">
+                        <input class="form-control" type="number" value="5" min="0" max="1000" step="1">
+                      </div>
+                     <p>Start Year (optional)</p>
+                     <div class="md-form active-purple active-purple-2 mb-3">
+                        <input class="form-control" type="text" aria-label="Search">
+                      </div>
+                      
+                      <!-- Search form -->
+                      <p>End Year (optional)</p>
+                      <div class="md-form active-purple active-purple-2 mb-3">
+                        <input class="form-control" type="text" aria-label="Search">
+                      </div>
+                      <button type="submit" class="btn btn-primary" id = "submit">Search</button>
 
-    
-    <script src="script.js"></script>
+                      <!--Content-->
+                      <h6>Top Articles</h6>
+                      <p id = "content"></p>
+                </div>
+
+
+
+                           
+                </div>
+              </div>
+        </div>
+      </main>
+  <script type = "text/javascript" src = "script.js"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
+
 </body>
 </html>
