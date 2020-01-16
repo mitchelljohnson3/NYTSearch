@@ -29,9 +29,9 @@
                         <input class="form-control" type="text" aria-label="Search" id="term">
                       </div>
                       <!-- Search form -->
-                      <p>Number of Records to Retrieve</p>
+                      <p>Number of Records to Retrieve (1-10)</p>
                       <div class="md-form active-purple active-purple-2 mb-3">
-                        <input class="form-control" type="number" value="5" min="0" max="1000" step="1" id="limit">
+                        <input class="form-control" type="number" min="0" max="10" step="1" id="limit">
                       </div>
                      <p>Start Year (optional)</p>
                      <div class="md-form active-purple active-purple-2 mb-3">
@@ -47,7 +47,7 @@
 
                       <!--Content-->
                       <h6>Top Articles</h6>
-                      <p id = "content"></p>
+                      <div id="content-div"></div>
                 </div>
 
 
