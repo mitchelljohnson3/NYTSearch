@@ -10,7 +10,7 @@ let genUrl = (keyWord, startDate, endDate) => {
     } else {
         var endDateParam = "";
     }
-    return `https://api.nytimes.com/svc/search/v2/articlesearch.json?q=%22${keyWord}%22${startDateParam}${endDateParam}&fl=web_url&fl=lead_paragraph&fl=pub_date&api-key=${apiKey}`;
+    return `https://api.nytimes.com/svc/search/v2/articlesearch.json?q=%22${keyWord}%22${startDateParam}${endDateParam}&fl=web_url&fl=headline&fl=pub_date&api-key=${apiKey}`;
 };
 
 let showError = () => {
@@ -51,7 +51,7 @@ let displayArticles = (jsonObject) => {
         let pubDate = document.createElement("p");
         let url = document.createElement("a");
 
-        title.textContent = articles[i].lead_paragraph;
+        title.textContent = articles[i].headline.main;
         pubDate.textContent = "Publish date: " + articles[i].pub_date.split("T")[0];
         url.setAttribute("href", articles[i].web_url);
         url.textContent = articles[i].web_url;
